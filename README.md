@@ -11,7 +11,9 @@ Built with **React**, **Redux**, and **Tailwind CSS**, this portal features a cl
 
 🚀 [View Deployed Site](https://hs024.github.io/Internship-portal/)
 
-![App Preview](public/intern.png)
+## 📸 Preview
+
+![Preview](internship-portal/public/intern.png)
 
 ## 📁 Folder Structure
 
