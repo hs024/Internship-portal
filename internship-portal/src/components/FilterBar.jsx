@@ -40,6 +40,15 @@ const FilterBar = () => {
         placeholder="🛠️ Skill"
         className="flex-1 min-w-[150px] px-4 py-2 border border-gray-300 dark:border-slate-700 rounded-xl bg-gray-50 dark:bg-slate-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
       />
+      {/* title Filter */}
+      <input
+        type="text"
+        name="title"
+        value={filters.title}
+        onChange={handleChange}
+        placeholder="🛠️ title"
+        className="flex-1 min-w-[150px] px-4 py-2 border border-gray-300 dark:border-slate-700 rounded-xl bg-gray-50 dark:bg-slate-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      />
 
       {/* Reset Button */}
       <button
