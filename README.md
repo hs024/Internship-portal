@@ -6,6 +6,13 @@ Built with **React**, **Redux**, and **Tailwind CSS**, this portal features a cl
 
 ---
 
+
+## 🔗 Live Preview
+
+🚀 [View Deployed Site](https://hs024.github.io/Internship-portal/)
+
+![App Preview](public/intern.png)
+
 ## 📁 Folder Structure
 
 ```bash
@@ -51,7 +58,7 @@ internship-portal/
 - 🧾 **Internship Details Page** with job info and required skills
 - 📄 **Application Form** to apply for an internship
 - 🗂️ **Redux Store** for state management of internships and filters
-- 🌙 **Dark mode ready** (uses Tailwind's `dark:` variants)
+
 
 ---
 
