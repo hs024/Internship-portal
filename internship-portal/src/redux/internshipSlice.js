@@ -1,18 +1,38 @@
 import { createSlice } from "@reduxjs/toolkit";
 import mockData from "../mockData";
 
+const initialState = {
+  list: mockData,
+  filters: {
+    location: "",
+    company: "",
+    skill: "",
+  },
+  filtered: mockData,
+};
+
 const internshipSlice = createSlice({
   name: "internships",
-  initialState: {
-    list: mockData,
-    filters: {},
-  },
+  initialState,
   reducers: {
-    setFilter(state, action) {
-      state.filters = action.payload;
+    setFilter: (state, action) => {
+      state.filters = { ...state.filters, ...action.payload };
+      const { location, company, skill } = state.filters;
+
+      state.filtered = state.list.filter((item) => {
+        return (
+          item.location.toLowerCase().includes(location.toLowerCase()) &&
+          item.company.toLowerCase().includes(company.toLowerCase()) &&
+          item.skills.join(" ").toLowerCase().includes(skill.toLowerCase())
+        );
+      });
+    },
+    resetFilters: (state) => {
+      state.filters = { location: "", company: "", skill: "" };
+      state.filtered = state.list;
     },
   },
 });
 
-export const { setFilter } = internshipSlice.actions;
+export const { setFilter, resetFilters } = internshipSlice.actions;
 export default internshipSlice.reducer;

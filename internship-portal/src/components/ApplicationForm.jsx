@@ -40,7 +40,6 @@ const ApplicationForm = ({ internship }) => {
       company: internship.company,
     });
 
-    // Redirect to home after short delay
     setTimeout(() => {
       navigate("/");
     }, 500);
@@ -48,65 +47,99 @@ const ApplicationForm = ({ internship }) => {
 
   return (
     <form
-      className="space-y-4"
       onSubmit={handleSubmit}
       encType="multipart/form-data"
+      className="space-y-6 text-gray-800 dark:text-gray-100"
     >
-      <input
-        name="name"
-        placeholder="Full Name"
-        onChange={handleChange}
-        required
-        className="w-full border p-2 rounded"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        onChange={handleChange}
-        required
-        className="w-full border p-2 rounded"
-      />
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone Number"
-        onChange={handleChange}
-        required
-        className="w-full border p-2 rounded"
-      />
-      <input
-        type="url"
-        name="portfolio"
-        placeholder="Portfolio/LinkedIn (optional)"
-        onChange={handleChange}
-        className="w-full border p-2 rounded"
-      />
-      <textarea
-        name="coverLetter"
-        placeholder="Write a short cover letter..."
-        rows={5}
-        onChange={handleChange}
-        required
-        className="w-full border p-2 rounded"
-      ></textarea>
+      {/* Name */}
       <div>
-        <label className="block mb-1">Upload Resume (PDF/DOC):</label>
+        <label className="block text-sm font-medium mb-1">Full Name</label>
+        <input
+          name="name"
+          onChange={handleChange}
+          required
+          placeholder="himanshu"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+
+      {/* Email */}
+      <div>
+        <label className="block text-sm font-medium mb-1">Email</label>
+        <input
+          type="email"
+          name="email"
+          onChange={handleChange}
+          required
+          placeholder="you@gmail.com"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+
+      {/* Phone */}
+      <div>
+        <label className="block text-sm font-medium mb-1">Phone Number</label>
+        <input
+          type="tel"
+          name="phone"
+          onChange={handleChange}
+          required
+          placeholder="99999991111"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+
+      {/* Portfolio */}
+      <div>
+        <label className="block text-sm font-medium mb-1">
+          Portfolio / LinkedIn (optional)
+        </label>
+        <input
+          type="url"
+          name="portfolio"
+          onChange={handleChange}
+          placeholder="https://portfolio"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+
+      {/* Cover Letter */}
+      <div>
+        <label className="block text-sm font-medium mb-1">Cover Letter</label>
+        <textarea
+          name="coverLetter"
+          rows={5}
+          onChange={handleChange}
+          required
+          placeholder="Write a short cover letter..."
+          className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+
+      {/* Resume */}
+      <div>
+        <label className="block text-sm font-medium mb-1">
+          Upload Resume (PDF/DOC)
+        </label>
         <input
           type="file"
           name="resume"
           accept=".pdf,.doc,.docx"
           onChange={handleChange}
           required
-          className="w-full"
+          className="w-full text-sm text-gray-600 dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700"
         />
       </div>
-      <button
-        type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-      >
-        Submit Application
-      </button>
+
+      {/* Submit Button */}
+      <div className="pt-4">
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-xl transition shadow-lg"
+        >
+          Submit Application
+        </button>
+      </div>
     </form>
   );
 };
